@@ -76,8 +76,8 @@ export function ChatPanel({ id, title, input, setInput }: ChatPanelProps) {
     },
     {
       heading: 'What do experts say about',
-      subheading: `Texas's chances in March Madness?`,
-      message: `What do experts say about Texas's chances in March Madness?`
+      subheading: `Purdue's chances in March Madness?`,
+      message: `What do experts say about Purdue's chances in March Madness?`
     }
   ]
 
