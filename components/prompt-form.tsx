@@ -34,6 +34,8 @@ export function PromptForm({
 
 
   async function submitUserMessage(value: string) {
+
+    try{
     // Optimistically add bot message UI
     let spinner_id = nanoid()
     setMessages(currentMessages => [
@@ -46,11 +48,13 @@ export function PromptForm({
     let chat_history = JSON.stringify(textMessages)
 
     // Get response from AI
+    
   const response = await fetch(`https://aqueous-oasis-77203-233ea9713465.herokuapp.com/chat?question=${value}&chat_history=${chat_history}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
       }    })
+
 
     const responseMessage = await response.json()
 
@@ -64,6 +68,14 @@ export function PromptForm({
       id: nanoid(),
       display: <BotMessage content={output}></BotMessage>
     }
+  }
+  catch(e){
+    return {
+      id: nanoid(),
+      display: <BotMessage content={"Sorry, Billy this question too long to answer. We will be able to answer such questions in the future!"}></BotMessage>
+    }
+  }
+  
   }
 
   React.useEffect(() => {
