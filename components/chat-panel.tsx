@@ -83,9 +83,9 @@ export function ChatPanel({ id, title, input, setInput }: ChatPanelProps) {
       message: 'How has Duke done against the spread in the last 5 games?'
     },
     {
-      heading: 'How has North Carolina',
-      subheading: 'done against Virginia?',
-      message: `How has North Carolina done against Virginia?`
+      heading: 'Who are some sleepers in',
+      subheading: 'March Madness this year?',
+      message: `How are some sleepers in March Madness this year`
     },
     {
       heading: 'What do experts say about',
