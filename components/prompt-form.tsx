@@ -46,7 +46,7 @@ export function PromptForm({
     let chat_history = JSON.stringify(textMessages)
 
     // Get response from AI
-  const response = await fetch(`http://127.0.0.1:8000/chat?question=${value}&chat_history=${chat_history}`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/chat?question=${value}&chat_history=${chat_history}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'

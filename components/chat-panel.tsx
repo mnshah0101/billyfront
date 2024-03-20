@@ -20,6 +20,7 @@ export interface ChatPanelProps {
 }
 
 export function ChatPanel({ id, title, input, setInput }: ChatPanelProps) {
+  console.log(process.env.NEXT_PUBLIC_URL)
   const [aiState] = useAIState()
   const [messages, setMessages] = useUIState<typeof AI>()
   const [shareDialogOpen, setShareDialogOpen] = React.useState(false)
@@ -38,7 +39,7 @@ export function ChatPanel({ id, title, input, setInput }: ChatPanelProps) {
     let chat_history = JSON.stringify(textMessages)
 
     // Get response from AI
-  const response = await fetch(`http://127.0.0.1:8000/chat?question=${value}&chat_history=${chat_history}`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/chat?question=${value}&chat_history=${chat_history}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
