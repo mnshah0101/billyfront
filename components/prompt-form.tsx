@@ -46,7 +46,7 @@ export function PromptForm({
     let chat_history = JSON.stringify(textMessages)
 
     // Get response from AI
-  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/chat?question=${value}&chat_history=${chat_history}`, {
+  const response = await fetch(`https://aqueous-oasis-77203-233ea9713465.herokuapp.com/chat?question=${value}&chat_history=${chat_history}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
