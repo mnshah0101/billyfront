@@ -27,9 +27,10 @@ export function ChatPanel({ id, title, input, setInput }: ChatPanelProps) {
   const [textMessages, setTextMessages] = React.useState<Array<Object>>([])
 
   async function submitUserMessage(value: string) {
+    let spinner_id = nanoid()
     try{
     // Optimistically add bot message UI
-    let spinner_id = nanoid()
+    
     setMessages(currentMessages => [
       ...currentMessages,
       {
@@ -60,6 +61,9 @@ export function ChatPanel({ id, title, input, setInput }: ChatPanelProps) {
     }
   }
   catch (error) {
+        setMessages(currentMessages => currentMessages.filter(message => message.id !== spinner_id))
+
+    
     return {
       id: nanoid(),
       display: <BotMessage content={"Sorry, Billy this question too long to answer. We will be able to answer such questions in the future!"}></BotMessage>

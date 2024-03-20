@@ -34,10 +34,9 @@ export function PromptForm({
 
 
   async function submitUserMessage(value: string) {
+     let spinner_id = nanoid()
 
-    try{
-    // Optimistically add bot message UI
-    let spinner_id = nanoid()
+    try{   
     setMessages(currentMessages => [
       ...currentMessages,
       {
@@ -70,6 +69,10 @@ export function PromptForm({
     }
   }
   catch(e){
+
+     setMessages(currentMessages => currentMessages.filter(message => message.id !== spinner_id))
+
+    
     return {
       id: nanoid(),
       display: <BotMessage content={"Sorry, Billy this question too long to answer. We will be able to answer such questions in the future!"}></BotMessage>
