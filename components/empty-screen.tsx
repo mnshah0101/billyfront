@@ -33,7 +33,7 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
         </p>
         <p className="leading-normal text-muted-foreground">
          
-          Billy is currently in training. Feel free to ask him your March Madness questions, and hell do his best to help you out.
+          Billy is currently in training. Feel free to ask him your March Madness questions, and Billy will do his best to help you out.
         </p>
       </div>
     </div>
