@@ -85,7 +85,7 @@ export function ChatPanel({ id, title, input, setInput }: ChatPanelProps) {
     {
       heading: 'Who are some sleepers in',
       subheading: 'March Madness this year?',
-      message: `How are some sleepers in March Madness this year`
+      message: `Who are some sleepers in March Madness this year`
     },
     {
       heading: 'What do experts say about',
