@@ -1,4 +1,6 @@
 import { SidebarDesktop } from '@/components/sidebar-desktop'
+import { Analytics } from "@vercel/analytics/react"
+
 
 interface ChatLayoutProps {
   children: React.ReactNode
