@@ -75,7 +75,7 @@ export function PromptForm({
     
     return {
       id: nanoid(),
-      display: <BotMessage content={"Sorry, Billy this question too long to answer. We will be able to answer such questions in the future!"}></BotMessage>
+      display: <BotMessage content={"Sorry, this question is too long to answer. Billy will be able to answer such questions in the future!"}></BotMessage>
     }
   }
   
